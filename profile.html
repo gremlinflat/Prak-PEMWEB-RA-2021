@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile Page - Fahri Novaldi</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div id="background">
+      <div id="form-bg">
+
+        <h2 id="header">Biodata Pendaftar</h2>
+        <div class="profile-table">
+            <img class="profile-pict" src="src/images/profile-dummy.jpg" alt="Foto Profil" id="photo-profile">
+            <div class="profile-data">
+                <div >
+                    <span class="bio-label">Nama Lengkap : </span>
+                    <span id="nama">nama_dummy</span>
+                </div>
+                <div >
+                    <span class="bio-label">Tempat, Tanggal Lahir : </span>
+                    <span id="ttl">TTL_dummy</span>
+                </div>
+                <div >
+                    <span class="bio-label">Jenis Kelamin : </span>
+                    <span id="gender">gender_dummy</span>
+                </div>
+                <div >
+                    <span class="bio-label">Golongan Darah : </span>
+                    <span id="goldar">goldar_dummy</span>
+                </div>
+                <div >
+                    <span class="bio-label">Program Studi : </span>
+                    <span id="prodi">prodi_dummy</span>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+      let profile_pict = document.getElementById("photo-profile");
+      let nama = document.getElementById("nama");
+      let TTL = document.getElementById("ttl");
+      let gender = document.getElementById("gender");
+      let goldar = document.getElementById("goldar");
+      let prodi = document.getElementById("prodi");
+      
+      const query_string = new URLSearchParams(window.location.search);
+      profile_pict.src = query_string.get("photo");
+      nama.innerHTML = query_string.get("nama");
+
+      let tanggal_lahir_raw = new Date (query_string.get("tanggallahir"));
+      const namaBulan = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember" ];
+      let tanggal_lahir = tanggal_lahir_raw.getDate() + " " + namaBulan[tanggal_lahir_raw.getMonth()] +" " + tanggal_lahir_raw.getFullYear();
+      TTL.innerHTML = query_string.get("tempat") + ", " + tanggal_lahir;
+
+      gender.innerHTML = query_string.get("gender");
+      goldar.innerHTML = query_string.get("goldar");
+      prodi.innerHTML = query_string.get("prodi");
+
+  </script>
+</html>

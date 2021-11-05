@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML TASK 2 - Fahri Novaldi</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div id="background">
+      <div id="form-bg">
+
+        <h2 id="header">edit Registrasi</h2>
+
+        <form id="forms" action="profile.html" method="get">
+            <div class="field">
+                <label for="nama">Nama Lengkap</label>
+                <input class="textform" type="text" name="nama" id="nama">
+            </div>
+            <div class="field">
+                <label for="tempat">Tempat Lahir</label>
+                <input class="textform" type="text" name="tempat" id="tempat">
+            </div>
+            <div class="field">
+                <label for="tanggallahir">Tanggal Lahir</label>
+                <input class="textform" type="date" name="tanggallahir" id="tanggallahir">
+            </div>
+            <div class="field">
+                <label for="">Jenis Kelamin</label>
+                <select class="textform" name="gender" id="gender">
+                    <option value="Laki-laki">Laki-laki</option>
+                    <option value="Perempuan">Perempuan</option>
+                </select>
+            </div>
+            <div class="field">
+                <label>Golongan Darah</label>
+                <input class="textform" type="text" name="goldar" id="goldar">
+            </div>
+            <div class="field">
+                <label>Program Studi</label>
+                <input class="textform" type="text" name="prodi" id="prodi">
+            </div>
+            <div class="field">
+                <label class="field" for="photo">URL Foto</label>
+                
+                <input class="textform" type="text" name="photo" id="photo">
+                <!--
+                <label class="textform"> <input type='file' name="photo" id="photo"/> </label>
+                -->
+            </div>
+            <input class="kirim" type="submit" value="Kirim!"> 
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
