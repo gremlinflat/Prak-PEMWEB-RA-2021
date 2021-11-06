@@ -3,7 +3,9 @@ $(document).ready(function(){
     $('#form-bg').hide()
 
     $('.add-btn').click(function(){
-		$('#form-bg').show()
+		$('#form-bg').show();
+		$('#header').text("Tambah Data Mahasiswa");
+		$('.kirim').val("Tambah!")
 	});
 	
 	readWhole();
@@ -44,18 +46,30 @@ $(document).ready(function(){
                       </tr>
 		`
 		$('.tabel-mahasiswa').append(template);
-		console.log("template");
 	}
 	function readWhole(){
 		clearform();
-		$('.targetData').html('');
 		$.ajax({
 			type : 'GET',
 			url : 'read.php',
 			dataType : 'JSON',
 			success : function(response){
-				for( i=0; i<response.length; i++ ){
-					writeRowtoHtml(response[i]);
+				if(response){
+					for( i=0; i<response.length; i++ ){
+						writeRowtoHtml(response[i]);
+					}
+				}else{
+					$('.tabel-mahasiswa').append(
+						`
+						<tr>
+							<td colspan="6" rowspan="4" heig> <h1 class="text-center text-5xl font-normal leading-normal mt-0 mb-2 text-teal-800">Database Kosong</h1></td>
+					  	</tr>
+					  	<tr></tr>
+					  	<tr></tr>
+					  	<tr></tr>
+					  	<tr></tr>
+						`
+					);
 				}
 			}
 		})
