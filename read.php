@@ -2,10 +2,10 @@
 
 include 'connection.php';
 
-$sql = mysqli_query($conn, "SELECT * FROM mahasiswa");
-$result = array();
-while($fetchArr = mysqli_fetch_array($sql)){
-	$result[] = $fetchArr;
+$db = mysqli_query($conn, "SELECT * FROM data_mahasiswa");
+
+while($row=mysqli_fetch_array($db)){
+	$result[] = $row;
 }
 echo json_encode($result);
 
