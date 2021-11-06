@@ -68,7 +68,7 @@ label {
     border-color: rgba(139,92,246,1)
 }
 
-.kirim{
+#form-button{
     margin-top: 16px;
     display: block;
     width: 100%;
@@ -84,7 +84,7 @@ label {
     transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter,-webkit-backdrop-filter;
 }
 
-.kirim:hover{
+#form-button:hover{
     background-color: rgba(252,211,77,1);
     color: rgba(146,64,14,1);
 }

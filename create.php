@@ -5,7 +5,7 @@ include "connection.php";
 $nama = $_POST["nama"];
 $tempat = $_POST["tempat"];
 $tanggallahir = $_POST["tanggallahir"];
-$jeniskelamin = $_POST["gender"];
+$jeniskelamin = $_POST["jeniskelamin"];
 $nim = $_POST["nim"];
 $prodi = $_POST["prodi"];
 
@@ -14,7 +14,6 @@ if(!($nama=='' || $tempat=='' || $tanggallahir=='' || $jeniskelamin=='' || $nim=
 }
 
 $result['status'] = $sql ? "1" : "0";
-echo $sql;
 echo json_encode($result);
 
 ?>
