@@ -54,7 +54,25 @@ $(document).ready(function () {
       },
     });
   }
-  
+  function deleteMhs(id){
+		$.ajax({
+			type : 'POST',
+			url : 'delete.php',
+			data : 'nim='+id,
+			dataType : 'JSON',
+			success : function(response){
+				if(response.status == '1'){
+					document.body.scrollTop = 0;
+					document.documentElement.scrollTop = 0;
+          alert(`Data mahasiswa dengan NIM ${response.nim} telah dihapus`)
+					readWhole();
+				}else{
+					alert("perintah gagal dijalankan");
+					readWhole();
+				}
+			}
+		})
+	}
   $("#form-button").click(function () {
     addNewMhs();
   });
@@ -97,14 +115,17 @@ $(document).ready(function () {
 						${data["prodi"]}
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                          <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                          <button id="${data["nim"]}" class="edit text-indigo-600 hover:text-indigo-900">Edit</a>
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                          <a href="#" class="text-red-600 hover:text-red-900">Delete</a>
+                          <button id="${data["nim"]}" class="btn-delete text-red-600 hover:text-red-900">Delete</a>
                         </td>
                       </tr>
 		`;
     $(".tabel-mahasiswa").append(template);
+    $('.btn-delete').click(function(){
+      deleteMhs($(this).attr('id'));
+    })
   }
   function readWhole() {
     clearform();
@@ -113,8 +134,8 @@ $(document).ready(function () {
       url: "read.php",
       dataType: "JSON",
       success: function (response) {
+        $(".tabel-mahasiswa").html("");
         if (response.length != 0) {
-          $(".tabel-mahasiswa").html("");
           for (i = 0; i < response.length; i++) {
             writeRowtoHtml(response[i]);
           }
@@ -138,8 +159,6 @@ $(document).ready(function () {
     $("#nama").val("");
     $("#tempat").val("");
     $("#tanggallahir").val("");
-    $("#gender").val("");
     $("#nim").val("");
-    $("#prodi").val("");
   }
 });
