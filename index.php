@@ -9,15 +9,16 @@
 <body>
     <nav>
         <ul>
-            <li><a href="javascript:void()" onclick="task1()">SOAL NO 1</a></li>
-            <li><a href="javascript:void()" onclick="task2()">SOAL NO 2</a></li>
-            <li><a href="javascript:void()" onclick="task3()">SOAL NO 3</a></li>
+            <li><button href="javascript:void()" onclick="task1()">SOAL NO 1</button></li>
+            <li><button href="javascript:void()" onclick="task2()">SOAL NO 2</button></li>
+            <li><button href="javascript:void()" onclick="task3()">SOAL NO 3</button></li>
         </ul>
     </nav>
     <div id="content"></div>
 
 </body>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script>
     function task1(){
         $.get("calc.php", function(data) {
