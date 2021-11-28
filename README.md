@@ -13,5 +13,7 @@ dibawah ini berisi status dari tugas yang diberikan setiap minggunya.
 - [x] [Praktikum minggu 2](https://github.com/gremlinflat/Praktikum-Web-RA/tree/minggu2)
 - [x] [Praktikum minggu 3 (Challange Solved)](https://github.com/gremlinflat/Praktikum-Web-RA/tree/minggu3)
 - [x] [Praktikum minggu 4](https://github.com/gremlinflat/Prak-PEMWEB-RA-2021/tree/minggu4)
-- [ ] Praktikum minggu 5
+- [x] [Praktikum minggu 5](https://github.com/gremlinflat/Prak-PEMWEB-RA-2021/tree/minggu5)
+- [x] [Praktikum minggu 6](https://github.com/gremlinflat/Prak-PEMWEB-RA-2021/tree/minggu6)
+- [x] [Praktikum minggu 7](https://github.com/gremlinflat/Prak-PEMWEB-RA-2021/tree/minggu7) [Live Demo](https://praktikum-minggu7-database.herokuapp.com/)
 - [ ] Praktikum minggu 6
